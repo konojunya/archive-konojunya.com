@@ -33,7 +33,7 @@
       setTimeout((function() {
         $('.topAni').fadeOut('slow');
         return this;
-      }), 5 * 1);
+      }), 5 * 1000);
       $('.btn').on('click', function() {
         var clsArray;
         clsArray = $(this).attr("class").split(" ");
