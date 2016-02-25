@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+  <title>Happy Birthday!</title>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="./css/post.css">
+</head>
+<body>
+  <div class="mobile message">
+    <h1>さやへメッセージを届けよう！</h1>
+    <p class="err">メッセージと名前を入力してください！</p>
+    <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="name" placeholder="お名前">
+    </div>
+    <div class="mdl-textfield mdl-js-textfield">
+      <textarea type="text" class="mdl-textfield__input" type="text" id="post" placeholder="メッセージ" ></textarea>
+    </div>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="postbtn">Post!</button>
+  </div>
+  <script src="../../js/jquery.js"></script>
+  <script src="https://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      !function(){
+        var milkcocoa = new MilkCocoa('zooigsru86n.mlkcca.com');
+
+        var ds = milkcocoa.dataStore('messages');
+
+        ds.stream().sort("desc").next(function(err,datas){
+          datas.forEach(function(data){
+            renderMessage(data);
+          });
+        });
+
+        ds.on("push",function(e){
+          renderMessage(e);
+        });
+
+        function post(){
+          var postani = ["post_content post_ani1",
+                        "post_content post_ani2",
+                        "post_content post_ani3"
+                      ];
+          var postbgc = ["rgba(107, 255, 219,0.4)",
+                        "rgba(131, 247, 188, 0.4)",
+                        "rgba(150, 184, 251, 0.4)",
+                        "rgba(238, 96, 255, 0.4)",
+                        "rgba(255, 243, 26, 0.4)",
+                        "rgba(255, 0, 138, 0.4)",
+                        "rgba(109, 32, 236, 0.4)",
+                        "rgba(255, 0, 0, 0.4)",
+                        "rgba(249, 64, 164, 0.4)",
+                        "rgba(175, 255, 75, 0.4)",
+                        "rgba(255, 233, 140, 0.4)",
+                        "rgba(73, 119, 159, 0.4)",
+                        "rgba(0, 137, 205, 0.4)",
+                        "rgba(121, 28, 128, 0.4)",
+                        "rgba(61, 175, 135, 0.4)"
+                      ];
+          var aninum = Math.floor(Math.random()*3);
+          var bgcnum = Math.floor(Math.random()*15);
+
+          var content = escapeHTML($("#post").val());
+          var name = escapeHTML($('#name').val());
+          if(content !== "" && name !== ""){
+            ds.push({
+              message: content,
+              name: name,
+              postani: postani[aninum],
+              postbgc: postbgc[bgcnum]
+            },function(e){});
+            window.location = "view.html";
+            $("#post").val("");
+            $('#name').val("");
+          }else{
+            $('.err').fadeIn();
+            setTimeout(function(){
+              $('.err').fadeOut();
+            },3000);
+          }
+        }
+
+        $('#postbtn').on('click',function(){
+          post();
+        });
+
+        var post_content = null
+        function renderMessage(data){
+          post_content = document.createElement("div");
+          post_content.className = data.value.postani;
+          post_content.style.background = data.value.postbgc;
+          post_content.innerHTML = "<p>"+data.value.message+"</p>"+"<small>By "+data.value.name+"</small>";
+
+          document.getElementById("post_space").appendChild(post_content);
+        }
+
+        function escapeHTML(val) {
+          return $('<div>').text(val).html();
+        };
+      }();
+    });
+  </script>
+</body>
+</html>

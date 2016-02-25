@@ -1,0 +1,311 @@
+@charset "UTF-8"
+// font-family: 'Stalemate', cursive
+@import url(https://fonts.googleapis.com/css?family=Stalemate)
+// font-family: 'Averia Libre', cursive
+@import url(https://fonts.googleapis.com/css?family=Averia+Libre:400,700)
+// font-family: 'Ubuntu', sans-serif
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500)
+body,html
+  width: 100%
+  height: 100%
+*
+  padding: 0
+  margin: 0
+  font-family: 'Ubuntu', sans-serif
+
+$mobileFont: 10px
+$mobileFontH: 20px
+$mobileFontlist: 13px
+=temp
+  width: 100%
+  padding: 10% 0
+  h2
+    text-align: center
+    letter-spacing: 1rem
+    font-family: 'Stalemate', cursive
+    font-size: 3rem
+  p
+    text-align: center
+    font-size: 0.7rem
+.topAni
+  width: 100%
+  height: 100%
+  position: fixed
+  z-index: 10000000
+  .hello
+    width: 100%
+    height: 10rem
+    line-height: 10rem
+    font-size: 5rem
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    margin: auto
+    text-align: center
+    font-family: 'Averia Libre', cursive
+.fa-sun-o
+  display: none
+  position: fixed
+  top: 20px
+  right: 30px
+  color: rgb(247,126,0)
+  z-index: 1100
+.fa-cloud
+  display: none
+  position: fixed
+  top: 20px
+  right: 30px
+  color: rgb(204, 204, 204)
+  z-index: 1100
+.fa-moon-o
+  display: none
+  position: fixed
+  top: 20px
+  right: 30px
+  color: rgb(255,241,52)
+  z-index: 1100
+.fa-bars
+  display: none
+  position: fixed
+  top: 20px
+  left: 20px
+  z-index: 1000
+.fa-remove
+  display: none
+  position: fixed
+  top: 20px
+  left: 20px
+.navi
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  overflow: hidden
+  text-align: center
+  z-index: 100
+  ul
+    width: 70%
+    margin: 0 auto
+    li
+      float: left
+      list-style: none
+      width: 20%
+      a
+        font-family: 'Averia Libre', cursive
+        display: block
+        width: 100%
+        padding: 13% 0
+        text-decoration: none
+#topBox
+  width: 100%
+  height: 100%
+  position: relative
+  h1
+    width: 100%
+    height: 5rem
+    line-height: 5rem
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    margin: auto
+    text-align: center
+    font-family: 'Averia Libre', cursive
+    &::before
+      content: ""
+      display: block
+      width: 15%
+      height: 1px
+      margin: 0 auto
+    &::after
+      content: ""
+      display: block
+      width: 15%
+      height: 1px
+      margin: 0 auto
+#about
+  +temp
+  dl
+    padding: 5% 0
+    width: 50%
+    margin: 0 auto
+    dt
+      padding: 1% 0
+      &::before
+        content: "##"
+      &:first-letter
+        font-weight: bold
+    dd
+      padding: 1% 0
+      margin-left: 5%
+#portfolio
+  +temp
+  .protfolio_contents
+    width: 95%
+    margin: 3% auto
+    overflow: hidden
+    text-align: center
+    .content
+      width: 40%
+      margin: 1%
+      display: inline-block
+      position: relative
+      overflow: hidden
+      img
+        width: 100%
+      p
+        width: 100%
+        height: 20%
+        background-color: rgba(0,0,0,0.7)
+        position: absolute
+        bottom: 1%
+        color: white
+        -webkit-transition: opacity .5s linear
+        -o-transition: opacity .5s linear
+        transition: opacity .5s linear
+        &:hover
+          opacity: 0
+      a
+        display: block
+        width: 100%
+        height: 100%
+#community
+  +temp
+  .community_contents
+    width: 95%
+    margin: 2% auto
+    .content
+      width: 74%
+      margin: 1% auto 0
+      overflow: hidden
+      border-radius: 10px
+      padding: 3%
+      .img
+        float: left
+        width: 40%
+        overflow: hidden
+        border-radius: 10px
+        a
+          display: block
+          width: 100%
+          img
+            width: 100%
+      p
+        text-align: left
+        float: left
+        width: 56%
+        padding: 2%
+        line-height: 2rem
+#contact
+  +temp
+  height: 100%
+  .contact_contents
+    width: 40%
+    margin: 2% auto
+    overflow: hidden
+    dl
+      width: 30%
+      float: left
+      margin: 0 10%
+      dt
+        margin: 5% 0
+      dd
+        margin-left: 10%
+footer
+  width: 100%
+  text-align: center
+  padding: 5% 0
+  small
+    letter-spacing: 0.5rem
+@media only screen and (max-width: 1024px)
+  h2
+    font-size: $mobileFontH
+  .topAni
+    .hello
+      height: 2rem
+      line-height: 2rem
+      font-size: 2rem
+  .fa-bars
+    display: block
+  .fa-remove
+    display: block
+  .navi
+    display: none
+    height: 100%
+    overflow: scroll
+    position: fixed
+    top: 0
+    left: 0
+    ul
+      width: 70%
+      margin: 0 auto
+      li
+        float: none
+        width: 100%
+        a
+          padding: 13% 0
+          text-decoration: none
+  #topBox
+    h1
+      &:before
+        width: 10rem
+      &:after
+        width: 10rem
+  #about
+    dl
+      padding: 5% 0
+      width: 80%
+      margin: 0 auto
+      dt
+        padding: 5% 0
+        span
+          font-weight: bold
+      dd
+        padding: 5% 0
+        margin-left: 10%
+  #portfolio
+    .protfolio_contents
+      .content
+        width: 90%
+        margin: 2% auto
+        display: block
+        a
+          display: block
+          width: 100%
+          height: 100%
+  #community
+    .community_contents
+      .content
+        width: 80%
+        margin: 1% auto 0
+        padding: 3%
+        .img
+          width: 100%
+          a
+            display: block
+            width: 100%
+            img
+              width: 100%
+        p
+          text-align: left
+          width: 95%
+          line-height: 2rem
+          font-size: $mobileFont
+          a
+            font-size: $mobileFont
+  #contact
+    .contact_contents
+      dl
+        width: 100%
+        float: both
+        margin: 0
+        dt
+          margin: 5% 0
+        dd
+          margin-left: 10%
+  footer
+    small
+      letter-spacing: 0.3rem
