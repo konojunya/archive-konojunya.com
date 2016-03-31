@@ -15,6 +15,7 @@
       $('#hoge').replaceWith($(css));
       return this;
     };
+
     if (hours >= 5 && hours < 12) {
       setColor(color[0][0], color[0][1]);
       $('.fa-sun-o').show();
