@@ -8,9 +8,10 @@
 
   <title>新規登録</title>
 
-  <link rel="stylesheet" href="../stylesheets/lib/sanitize.min.css">
-  <link rel="stylesheet" href="../stylesheets/lib/font-awesome.min.css">
-  <link rel="stylesheet" href="../stylesheets/lib/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/lib/sanitize.min.css">
+  <link rel="stylesheet" href="stylesheets/lib/font-awesome.min.css">
+  <link rel="stylesheet" href="stylesheets/lib/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/src/style.css">
 
 </head>
 
@@ -25,7 +26,7 @@
 	</div>
 
 	<div class="container-fluid">
-		<form action="data.php" method="post">
+		<form action="/addSchedules" method="post">
 			<div class="form-group">
 				<label for="inputId" class="col-sm-2 control-label">ID</label>
 				<div class="col-sm-8">
@@ -46,8 +47,10 @@
 		</form>
 	</div>
 
-	<script src="../javascripts/lib/jquery.min.js"></script>
-	<script src="../javascripts/lib/bootstrap.min.js"></script>
+	<script src="javascripts/lib/jquery.min.js"></script>
+	<script src="javascripts/lib/bootstrap.min.js"></script>
+	<script src="javascripts/lib/vue.min.js"></script>
+	<script src="javascripts/src/signup.js"></script>
 </body>
 
 </html>
