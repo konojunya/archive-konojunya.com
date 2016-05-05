@@ -12,6 +12,7 @@
     "ect": "^0.5.9",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
-    "mongoose": "^4.4.13"
+    "mongoose": "^4.4.13",
+    "node-uuid": "^1.4.7"
   }
 }

@@ -4,11 +4,11 @@
 
 - User Model
 
-|Property |Type     |
-|:---------|:--------:|
-|id       |String 	|
-|password |String 	|
-|class    |String 	|
+|Property 	|Type     |
+|:----------|:-------:|
+|id       	|String 	|
+|password 	|String 	|
+|department	|String 	|
 
 
 - Schedules Model
@@ -38,5 +38,3 @@
 |GET    |/signup         |新規登録。signup.ectを返す                                                        								|
 |POST   |/singup         |id.password.classを見てidはユニークなので、すでにあればsignup.ectなければsignup-addschedule.ect 		|
 |POST   |/addSchedules   |siignup-addからのデータを保存→クッキーをもたせてredirect / or 保存できなかったらsignup-addを返す		|
-|GET    |/schedules      |その人の追加したスケジュールが一覧で出てくる(クッキー確認)<-ダメなら redirect /                     |
-|GET    |/schedules/uuid |アプリのメイン画面                                                                 								|

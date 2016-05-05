@@ -6,9 +6,10 @@ var SchedulesSchema   = new Schema({
 		{
 			wday: String,
 			subject: String,
-			roomNumber: Number
+			roomNum: String
 		}
-	]
+	],
+	createUser: String
 });
 
 module.exports = mongoose.model('Schedules', SchedulesSchema);
