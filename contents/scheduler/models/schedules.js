@@ -2,7 +2,35 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var SchedulesSchema   = new Schema({
-	timetable: [
+	g: [
+		{
+			wday: String,
+			subject: String,
+			roomNum: String
+		}
+	],
+	k: [
+		{
+			wday: String,
+			subject: String,
+			roomNum: String
+		}
+	],
+	s: [
+		{
+			wday: String,
+			subject: String,
+			roomNum: String
+		}
+	],
+	m: [
+		{
+			wday: String,
+			subject: String,
+			roomNum: String
+		}
+	],
+	f: [
 		{
 			wday: String,
 			subject: String,

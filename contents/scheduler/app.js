@@ -26,23 +26,23 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ect');
 app.engine('ect', ectRenderer.render);
 
+
 // route
 app.get("/",function(req,res){
   if(req.cookies.token){
     var id = req.cookies.token;
-    Schedules.find({createUser:id},{_id: false,timetable:true},function(err,item){
-      res.render("main.ect",{id:id,item:item[0].timetable});
+    Schedules.find({createUser:id},{_id: false},function(err,item){
+      res.render("main.ect",{id:id,g: item[0].g,k: item[0].k,s: item[0].s,m: item[0].m,f: item[0].f});
     });
   }else{
     res.render("index.ect");
   }
 });
-
 app.post("/login",function(req,res){
   var id = req.body.id;
   User.find({id: id},function(err,user){
     if(user != ""){
-      res.cookie("token",id,{maxAge: 6000,httpOnly: true});
+      res.cookie("token",id,{maxAge: 1000*60*60*24*365,httpOnly: true});
       res.redirect("/");
     }else{
       res.redirect("/signup");
@@ -53,7 +53,7 @@ app.get("/login",function(req,res){
   if(req.cookies.token){
     res.redirect("/");
   }else{
-    res.redirect("/");
+    res.redirect("/(");
   }
 });
 
@@ -90,14 +90,18 @@ app.post("/addSchedules",function(req,res){
     var id = req.body.id;
     var data = req.body.data;
     var schedules = new Schedules();
-    schedules.timetable = data;
+    schedules.g = data.g;
+    schedules.k = data.k;
+    schedules.s = data.s;
+    schedules.m = data.m;
+    schedules.f = data.f;
     schedules.createUser = id;
     schedules.save(function(err){
       if(err){
         res.send(err);
         next();
       }
-      res.cookie("token",id,{maxAge:10000,httpOnly:true});
+      res.cookie("token",id,{maxAge: 1000*60*60*24*365,httpOnly:true});
       res.redirect("/");
     });
   }else{
