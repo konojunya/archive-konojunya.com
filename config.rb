@@ -1,9 +1,8 @@
 require 'compass/import-once/activate'
 
 http_path = "/"
-css_dir = "stylesheets"
-sass_dir = "sass"
-images_dir = "images"
-javascripts_dir = "javascripts"
+css_dir = "public/stylesheets"
+sass_dir = "scss"
+images_dir = "public/images"
+javascripts_dir = "public/javascripts"
 output_style = :compressed
-preferred_syntax = :sass

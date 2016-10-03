@@ -1,14 +1,18 @@
 module.exports = {
-  entry: './javascripts/app.ts',
+  entry: "./es6/app.js",
   output: {
-    filename: './javascripts/bundle.js'
-  },
-  resolve: {
-    extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
+    filename: './public/javascripts/bundle.js'
   },
   module: {
     loaders: [
-      { test: /\.tsx?$/, loader: 'ts-loader' }
+      { 
+        test: /\.js$/, 
+        exclude: /node_modules/, 
+        loader: "babel", 
+        query:{
+          presets: ['es2015']
+        }
+      }
     ]
   }
-}
+};
