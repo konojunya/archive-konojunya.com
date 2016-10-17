@@ -6,80 +6,115 @@ import { TweenMax } from "gsap"
 
 var _data = {}
 
+var calms = [
+	"I'm Engineer.",
+	"I'm Student.",
+	"I'm 19 years old.",
+	"I am people.",
+]
+
 export default class EventFunctions{
 
 	opening(){
+		TweenMax.staggerTo([".top .title",".top .calm"],1,{alpha: 1,ease: Expo.easeInOut},0.5)
+		TweenMax.to(".menu-button",1,{delay: 1.5,right: "0%",ease: Expo.easeInOut})
+		$(".top .calm").text(calms[~~(Math.random() * calms.length)])
+	}
+
+	/*
+	*		menu button
+	*/
+	hide_menu_button(){
+		TweenMax.to(".menu-button",0.8,{right: "-20%",ease: Expo.easeInOut})
+	}
+
+	show_menu_button(){
+		TweenMax.to(".menu-button",0.8,{delay: 0.5,right: "0%",ease: Expo.easeInOut})
+	}
+
+	/*
+	*		menu
+	*/
+	open_menu(){
+		TweenMax.to(".menu",0.8,{delay: 0.5,right: "0%",ease: Expo.easeInOut})
+	}
+
+	close_menu(){
+		TweenMax.to(".menu",0.8,{right: "-20%",ease: Expo.easeInOut})
+	}
+
+	/*
+	*		show target view
+	*/
+	toPage(target){
+		window.history.pushState(null,null,"/"+target)
+		target = "."+target
+		$(target).fadeIn()
+		TweenMax.to(target,1,{delay: 0.5,top: "0%",ease: Expo.easeInOut})
+	}
+
+	/*
+	*		view close
+	*/
+	close_view(target){
+		window.history.pushState(null,null,"/")
+		TweenMax.to("."+target,1,{top: "100%",ease: Expo.easeInOut})
 		setTimeout(()=>{
-			$(".about-trigger").fadeIn()
-		},2000)
-		TweenMax.staggerTo([".top .title",".top .calm"],2,{alpha: 1,ease: Expo.easeInOut},0.2)
-		TweenMax.to(".top",1,{width: "75%",delay: 2,ease: Expo.easeInOut})
-		TweenMax.staggerTo(".product",1,{scale: 1,alpha: 1,ease: Expo.easeInOut,delay: 2.5},0.2)
+			$("."+target).fadeOut()
+		},300)
 	}
 
-	aboutmeBtnFunc(){
-		TweenMax.to(".about",1,{left: "0%",ease: Expo.easeInOut})
-	}
-
-	aboutmeCloseFunc(){
-		TweenMax.to(".about",1,{left: "-75%",ease: Expo.easeInOut})
-	}
-
-	productFunc(){
-		TweenMax.to(".top",1,{width: "100%",ease: Expo.easeInOut})
-		TweenMax.to(".product",0.5,{scale: 0,ease: Expo.easeInOut})
+	direct_product_detail(target){
 		$.ajax({
-			url: "/api",
-			type: "get",
+			url: "/portfolio",
+			type: "post",
 			data: {
-				type: $(this).data("product-name")
+				type: target
 			},
-			success: function(data){
-				TweenMax.to("#detail",1,{bottom: "0%",ease: Expo.easeInOut,delay: 1})
+			success: (data)=>{
+				TweenMax.to("#detail",1,{bottom: "0%",ease: Expo.easeInOut})
 				setTimeout(()=>{
 					$(".detail-close-btn").fadeIn();
-				},1500)
-				EventFunctions.prototype.setDetail(data)
+				},1000)
+				this.setDetail(data)
+				window.history.pushState(null,null,"/portfolio/"+data.id)
 			}
 		})
 	}
 
-	detailCloseFunc(){
+	show_product_detail(e){
+		var self = this;
+		$.ajax({
+			url: "/portfolio",
+			type: "post",
+			data: {
+				type: e.target.dataset.productName
+			},
+			success: (data)=>{
+				TweenMax.to("#detail",1,{bottom: "0%",ease: Expo.easeInOut})
+				setTimeout(()=>{
+					$(".detail-close-btn").fadeIn();
+				},1000)
+				self.setDetail(data)
+				window.history.pushState(null,null,"/portfolio/"+data.id)
+			}
+		})
+	}
+
+	close_detail(){
 		$("#detail").animate({
 			scrollTop: 0
 		},500)
 		$(".detail-close-btn").hide();
 		TweenMax.to(".product",0.5,{scale: 1,ease: Expo.easeInOut,delay: 1.5})
-		TweenMax.to(".top",1,{width: "75%",ease: Expo.easeInOut,delay: 1})
 		TweenMax.to("#detail",1,{bottom: "-100%",ease: Expo.easeInOut})
+		window.history.pushState(null,null,"/portfolio")
 	}
 
 	setDetail(data){
 		var $detail = $("#detail");
 		$detail.css("background-image","url("+data.bgUrl+")")
 		$("#detail .content").html(data.html)
-		// ds.stream().next((err,mes)=>{
-		// 	if(mes.length > 0){
-		// 		_data = mes[mes.length -1].value.data;
-		// 		if(mes[mes.length -1].value.data[data.id]){
-		// 			$(".like_count_number").text(mes[mes.length -1].value.data[data.id])
-		// 		}else{
-		// 			$(".like_count_number").text("0")
-		// 		}
-		// 	}
-		// })
-	}
-
-	loveFunc(){
-		var _id = $(this).data("product-name")
-		_data[_id] = parseInt($(".like_count_number").text()) + 1
-		$(".like_count_number").text(_data[_id])
-		EventFunctions.prototype._save(_data)
-	}
-
-	_save(data){
-		// ds.push({ data: data })
-		console.log(data)
 	}
 
 }

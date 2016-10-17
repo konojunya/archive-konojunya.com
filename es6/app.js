@@ -1,39 +1,77 @@
 import EventFunctions from "./functions.js"
 import $ from "jquery"
 
-var evfunc = new EventFunctions()
+var ef = new EventFunctions()
 
 /*
 *		opening
 */
-var calms = [
-	"I'm Engineer.",
-	"I'm Student.",
-	"I'm 19 years old.",
-	"I am people.",
-]
-var s = Math.floor(Math.random() * calms.length);
 window.onload = () => {
-	evfunc.opening()
-	$(".top .calm").text(calms[s])
+	var path = location.pathname
+	if(path == "/"){
+		ef.opening()
+	}else if(path == "/about" || path == "/portfolio"){
+		setTimeout(()=>{
+			ef.opening()
+		},1000)
+		ef.toPage(path.slice(1,path.length))
+		ef.hide_menu_button()
+	}else if(path.match(/\/portfolio\//)){
+		setTimeout(()=>{
+			ef.opening()
+		},1000)
+		var id = path.replace(/\portfolio\//,"")
+		ef.direct_product_detail(id.slice(1,id.length))
+		ef.hide_menu_button()
+		ef.toPage("portfolio")
+	}
 }
-window.onerror = () => {
-	window.location.reload()
-}
 
 /*
-*		about me
+*		menu button
 */
-$(".close-btn").on("click",evfunc.aboutmeCloseFunc)
-$(".about-trigger").on("click",evfunc.aboutmeBtnFunc)
+$(".menu-button").on("click",()=>{
+	ef.hide_menu_button()
+	ef.open_menu()
+})
+$(".menu .cancel").on("click",()=>{
+	ef.close_menu()
+	ef.show_menu_button()
+})
 
 /*
-*		product
+*		menu item hover
 */
-$(".product").on("click",evfunc.productFunc)
-$(".detail-close-btn").on("click",evfunc.detailCloseFunc)
+$(".menu-item").hover(
+	(el)=>{
+		// hover
+		$(el.target).addClass("active")
+	},
+	(el)=>{
+		// not hover
+		$(el.target).removeClass("active")
+	}
+)
 
 /*
-*		like button
+*		menu item click
 */
-$(".like_btn").on("click",evfunc.loveFunc)
+$(".menu-item").on("click",(e)=>{
+	ef.toPage($(e.target).data("menu"))
+	ef.hide_menu_button()
+	ef.close_menu()
+})
+
+/*
+*		view close
+*/
+$(".close-btn").on("click",(e)=>{
+	ef.close_view(e.target.parentElement.className)
+	ef.show_menu_button()
+})
+
+/*
+*		product select
+*/
+$(".product").on("click",ef.show_product_detail.bind(ef))
+$(".detail-close-btn").on("click",ef.close_detail)
