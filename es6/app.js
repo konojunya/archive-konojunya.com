@@ -10,6 +10,9 @@ window.onload = () => {
 	var path = location.pathname
 	if(path == "/"){
 		ef.opening()
+		setTimeout(()=>{
+			ef.open_menu()
+		},1000)
 	}else if(path == "/about" || path == "/portfolio"){
 		setTimeout(()=>{
 			ef.opening()
@@ -26,18 +29,6 @@ window.onload = () => {
 		ef.toPage("portfolio")
 	}
 }
-
-/*
-*		menu button
-*/
-$(".menu-button").on("click",()=>{
-	ef.hide_menu_button()
-	ef.open_menu()
-})
-$(".menu .cancel").on("click",()=>{
-	ef.close_menu()
-	ef.show_menu_button()
-})
 
 /*
 *		menu item hover
@@ -58,7 +49,6 @@ $(".menu-item").hover(
 */
 $(".menu-item").on("click",(e)=>{
 	ef.toPage($(e.target).data("menu"))
-	ef.hide_menu_button()
 	ef.close_menu()
 })
 
@@ -67,7 +57,7 @@ $(".menu-item").on("click",(e)=>{
 */
 $(".close-btn").on("click",(e)=>{
 	ef.close_view(e.target.parentElement.className)
-	ef.show_menu_button()
+	ef.open_menu()
 })
 
 /*

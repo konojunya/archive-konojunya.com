@@ -1,6 +1,7 @@
 var express = require("express")
 var bodyParser = require("body-parser")
 var fs = require("fs")
+var Twit = require("twit")
 var PORT = 3000
 
 var app = express()
@@ -9,7 +10,16 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+var twitter = new Twit({
+	consumer_key: "N0oGyQiyYyVNGlwebOTqGMLMF",
+  consumer_secret: "28f3HX0KEuZ6O3ZM4kGNrtmDLsCbv3mAsNhjj4opRDX68Q9gwN",
+  access_token: "2533007911-gMRbVch4lZXnYTQRQhI37XSY35oQ4gXPkdsLs56",
+  access_token_secret: "fNpjdUFE4hA17WybI0ytQ0q8xcp72U1qTQRXIYYvCCo3m",
+  timeout_ms: 60*1000,
+});
+
 var contents = [
+	"saisen_go",
 	"book_sharing",
 	"markdown_editor",
 	"saya_birthday",
@@ -45,6 +55,23 @@ app.post("/portfolio",function(req,res){
 		id: id,
 		bgUrl: "../images/"+id+"/screen.png",
 		html: html
+	})
+})
+
+app.post("/tweet",function(req,res){
+	var datas = [];
+	twitter.get("statuses/user_timeline",{count: 15,trim_user: true,exclude_replies: true},function(err,data,response){
+		Promise.all(data.map(function(status){
+			return datas.push(status.text)
+		}))
+		.then(function(){
+			res.json({
+				tweets: datas
+			})
+		})
+		.catch(function(err){
+			console.log(err)
+		})
 	})
 })
 
