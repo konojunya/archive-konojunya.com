@@ -75,6 +75,9 @@ export default class EventFunctions{
 		},300)
 	}
 
+	/*
+	*		直接プロダクトページに来た場合
+	*/
 	direct_product_detail(target){
 		$(".portfolio").show()
 		TweenMax.to(".portfolio",1,{delay: 0.5,top: "0%",ease: Expo.easeInOut})
@@ -99,6 +102,9 @@ export default class EventFunctions{
 		})
 	}
 
+	/*
+	*		show product detail
+	*/
 	show_product_detail(e){
 		var self = this;
 		$(".portfolio").css({
@@ -122,6 +128,9 @@ export default class EventFunctions{
 		})
 	}
 
+	/*
+	*		close detail view
+	*/
 	close_detail(){
 		$(".portfolio").css({
 			"overflow": "scroll",
@@ -136,6 +145,9 @@ export default class EventFunctions{
 		window.history.pushState(null,null,"/portfolio")
 	}
 
+	/*
+	*		set html data -> detail view
+	*/
 	setDetail(data){
 		var $detail = $("#detail");
 		$detail.css("background-image","url("+data.bgUrl+")")
