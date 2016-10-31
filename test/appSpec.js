@@ -1,7 +1,5 @@
-describe('app', function(){
-	it("test",function(){
-		var expected = "1"
-		var result = "1"
-		expect(expected).toEqual(result);
+describe("app ->",function(){
+	it("jquery",function(){
+		expect("1").toEqual("1");
 	})
-});
+})
