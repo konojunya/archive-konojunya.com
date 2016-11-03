@@ -60,27 +60,27 @@ app.post("/portfolio",function(req,res){
 
 app.post("/tweet",function(req,res){
 	var datas = [];
-	// twitter.get("statuses/user_timeline",{count: 15,trim_user: true,exclude_replies: true},function(err,data,response){
-	// 	Promise.all(data.map(function(status){
-	// 		return datas.push(status.text)
-	// 	}))
-	// 	.then(function(){
-	// 		res.json({
-	// 			tweets: datas
-	// 		})
-	// 	})
-	// 	.catch(function(err){
-	// 		console.log(err)
-	// 	})
-	// })
+	twitter.get("statuses/user_timeline",{count: 15,trim_user: true,exclude_replies: true},function(err,data,response){
+		Promise.all(data.map(function(status){
+			return datas.push(status.text)
+		}))
+		.then(function(){
+			res.json({
+				tweets: datas
+			})
+		})
+		.catch(function(err){
+			console.log(err)
+		})
+	})
 
 	// tests
-	for(var i = 0; i < 10; i++){
-		datas.push("hoge")
-	}
-	res.json({
-		tweets: datas
-	})
+	// for(var i = 0; i < 10; i++){
+	// 	datas.push("hoge")
+	// }
+	// res.json({
+	// 	tweets: datas
+	// })
 })
 
 app.get("/*",function(req,res){
