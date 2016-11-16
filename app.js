@@ -35,6 +35,9 @@ app.get("/about",function(req,res){
 app.get("/portfolio",function(req,res){
 	res.sendfile("index.html")
 })
+app.get("/hoge",function(req,res){
+	res.json({hoge: "hoge"})
+})
 app.get("/portfolio/:id",function(req,res){
 	var id = req.params.id;
 	if(contents.indexOf(id) >= 0){
