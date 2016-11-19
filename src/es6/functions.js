@@ -13,6 +13,9 @@ var calms = [
 
 export default class EventFunctions{
 
+	/**
+	 * opening
+	 */
 	opening(){
 		TweenMax.staggerTo([".top .title",".top .calm"],1,{alpha: 1,ease: Expo.easeInOut},0.5)
 		TweenMax.to(".menu-button",1,{delay: 1.5,right: "0%",ease: Expo.easeInOut})
@@ -20,9 +23,9 @@ export default class EventFunctions{
 		this.initTweetPosition()
 	}
 
-	/*
-	*		init position tweets
-	*/
+	/**
+	 * initTweetPosition
+	 */
 	initTweetPosition(){
 		var colors = ["#FF0000","#FF7505","#FFF000","#B3FF00","#3BFF00","#00FF48","#00FFB0","#00FFFF","#0095FF","#0032FF","#4F00FF","#CA00FF","#FF00DC","#FF0078"]
 		$.ajax({
@@ -43,20 +46,24 @@ export default class EventFunctions{
 		})
 	}
 
-	/*
-	*		menu
-	*/
+	/**
+	 * open_menu
+	 */
 	open_menu(){
 		TweenMax.to(".menu",0.8,{delay: 0.5,right: "0%",ease: Expo.easeInOut})
 	}
 
+	/**
+	 * close_menu
+	 */
 	close_menu(){
 		TweenMax.to(".menu",0.8,{right: "-20%",ease: Expo.easeInOut})
 	}
 
-	/*
-	*		show target view
-	*/
+	/**
+	 * toPage
+	 * @param  { string } target どのページへ行くのか
+	 */
 	toPage(target){
 		window.history.pushState(null,null,"/"+target)
 		target = "."+target
@@ -64,9 +71,10 @@ export default class EventFunctions{
 		TweenMax.to(target,1,{delay: 0.5,top: "0%",ease: Expo.easeInOut})
 	}
 
-	/*
-	*		view close
-	*/
+	/**
+	 * close_view
+	 * @param  { string } target 何の画面を閉じるのか
+	 */
 	close_view(target){
 		window.history.pushState(null,null,"/")
 		TweenMax.to("."+target,1,{top: "100%",ease: Expo.easeInOut})
@@ -75,9 +83,10 @@ export default class EventFunctions{
 		},300)
 	}
 
-	/*
-	*		直接プロダクトページに来た場合
-	*/
+	/**
+	 * direct_product_detail
+	 * @param  { string } target どの画面を開くのか
+	 */
 	direct_product_detail(target){
 		$(".portfolio").show()
 		TweenMax.to(".portfolio",1,{delay: 0.5,top: "0%",ease: Expo.easeInOut})
@@ -102,9 +111,10 @@ export default class EventFunctions{
 		})
 	}
 
-	/*
-	*		show product detail
-	*/
+	/**
+	 * show_product_detail
+	 * @param  { object } e event
+	 */
 	show_product_detail(e){
 		var self = this;
 		$(".portfolio").css({
@@ -128,9 +138,9 @@ export default class EventFunctions{
 		})
 	}
 
-	/*
-	*		close detail view
-	*/
+	/**
+	 * close_detail
+	 */
 	close_detail(){
 		$(".portfolio").css({
 			"overflow": "scroll",
@@ -148,6 +158,10 @@ export default class EventFunctions{
 	/*
 	*		set html data -> detail view
 	*/
+	/**
+	 * setDetail
+	 * @param { object } data ajaxでとってきたデータ
+	 */
 	setDetail(data){
 		var $detail = $("#detail");
 		$detail.css("background-image","url("+data.bgUrl+")")
