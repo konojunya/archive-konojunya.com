@@ -1,6 +1,4 @@
 $brand_color: rgba(213,127,130,1);
-@import "compass/utilities/general/clearfix";
-@import "compass/css3/transform";
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 
 body,html{
@@ -16,7 +14,9 @@ body,html{
 	display: none;
 }
 .clearfix:after{
-	@include clearfix;
+	content: "";
+	height: 0;
+	clear: both;
 }
 .top{
 	width: 100%;
@@ -241,7 +241,7 @@ body,html{
 			margin: 0 40px 100px;
 			font-weight: normal;
 			font-family: 'Quicksand', sans-serif;
-			@include rotate(-90deg);
+			transform: rotate(-90deg);
 			.img{
 				width: 100%;
 				height: 100%;
@@ -250,7 +250,7 @@ body,html{
 					display: block;
 					width: 100%;
 					height: 100%;
-					@include rotate(90deg);
+					transform: rotate(90deg);
 				}
 			}
 			.description{
