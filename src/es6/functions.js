@@ -37,8 +37,8 @@ export default class EventFunctions{
 				element.className = "tweet"
 				element.style.color = colors[i]
 				element.innerText = texts.tweets[i]
-				element.style.top = ~~(Math.random() * window.innerHeight * 0.7)+"px"
-				element.style.left = ~~(Math.random() * window.innerWidth * 0.7)+"px"
+				element.style.top = ~~(Math.random() * window.innerHeight * 0.6)+"px"
+				element.style.left = ~~(Math.random() * window.innerWidth * 0.6)+"px"
 				element.style.fontSize = ~~(Math.random() * 200)+20+"px"
 				$(".tweets").append(element)
 			}
