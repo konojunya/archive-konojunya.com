@@ -18,14 +18,12 @@ window.onload = () => {
 			ef.opening()
 		},1000)
 		ef.toPage(path.slice(1,path.length))
-		ef.hide_menu_button()
 	}else if(path.match(/\/portfolio\//)){
 		setTimeout(()=>{
 			ef.opening()
 		},1000)
 		var id = path.replace(/\portfolio\//,"")
 		ef.direct_product_detail(id.slice(1,id.length))
-		ef.hide_menu_button()
 		ef.toPage("portfolio")
 	}
 }
@@ -63,5 +61,5 @@ $(".close-btn").on("click",(e)=>{
 /*
 *		product select
 */
-$(".product").on("click",ef.show_product_detail.bind(ef))
+$(".product").on("click",ef.show_product_detail)
 $(".detail-close-btn").on("click",ef.close_detail)

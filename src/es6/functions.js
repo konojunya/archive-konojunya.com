@@ -16,7 +16,7 @@ export default class EventFunctions{
 	/**
 	 * opening
 	 */
-	opening(){
+	opening = () => {
 		TweenMax.staggerTo([".top .title",".top .calm"],1,{alpha: 1,ease: Expo.easeInOut},0.5)
 		TweenMax.to(".menu-button",1,{delay: 1.5,right: "0%",ease: Expo.easeInOut})
 		$(".top .calm").text(calms[~~(Math.random() * calms.length)])
@@ -26,7 +26,7 @@ export default class EventFunctions{
 	/**
 	 * initTweetPosition
 	 */
-	initTweetPosition(){
+	initTweetPosition = () => {
 		var colors = ["#FF0000","#FF7505","#FFF000","#B3FF00","#3BFF00","#00FF48","#00FFB0","#00FFFF","#0095FF","#0032FF","#4F00FF","#CA00FF","#FF00DC","#FF0078"]
 		$.ajax({
 			url: "/tweet",
@@ -49,14 +49,14 @@ export default class EventFunctions{
 	/**
 	 * open_menu
 	 */
-	open_menu(){
+	open_menu = () => {
 		TweenMax.to(".menu",0.8,{delay: 0.5,right: "0%",ease: Expo.easeInOut})
 	}
 
 	/**
 	 * close_menu
 	 */
-	close_menu(){
+	close_menu = () => {
 		TweenMax.to(".menu",0.8,{right: "-20%",ease: Expo.easeInOut})
 	}
 
@@ -64,8 +64,9 @@ export default class EventFunctions{
 	 * toPage
 	 * @param  { string } target どのページへ行くのか
 	 */
-	toPage(target){
+	toPage = (target) => {
 		window.history.pushState(null,null,"/"+target)
+		this.changeTitle("JUNYA KONO | "+target)
 		target = "."+target
 		$(target).fadeIn()
 		TweenMax.to(target,1,{delay: 0.5,top: "0%",ease: Expo.easeInOut})
@@ -73,10 +74,11 @@ export default class EventFunctions{
 
 	/**
 	 * close_view
-	 * @param  { string } target 何の画面を閉じるのか
+	 * @param  { string } target root viewに戻ってくる
 	 */
-	close_view(target){
+	close_view = (target) => {
 		window.history.pushState(null,null,"/")
+		this.changeTitle("JUNYA KONO")
 		TweenMax.to("."+target,1,{top: "100%",ease: Expo.easeInOut})
 		setTimeout(()=>{
 			$("."+target).fadeOut()
@@ -87,7 +89,7 @@ export default class EventFunctions{
 	 * direct_product_detail
 	 * @param  { string } target どの画面を開くのか
 	 */
-	direct_product_detail(target){
+	direct_product_detail = (target) => {
 		$(".portfolio").show()
 		TweenMax.to(".portfolio",1,{delay: 0.5,top: "0%",ease: Expo.easeInOut})
 		$(".portfolio").css({
@@ -107,6 +109,7 @@ export default class EventFunctions{
 				},1000)
 				this.setDetail(data)
 				window.history.pushState(null,null,"/portfolio/"+data.id)
+				this.changeTitle("JUNYA KONO | "+data.id)
 			}
 		})
 	}
@@ -115,7 +118,7 @@ export default class EventFunctions{
 	 * show_product_detail
 	 * @param  { object } e event
 	 */
-	show_product_detail(e){
+	show_product_detail = (e) => {
 		var self = this;
 		$(".portfolio").css({
 			"overflow": "hidden",
@@ -134,6 +137,7 @@ export default class EventFunctions{
 				},1000)
 				self.setDetail(data)
 				window.history.pushState(null,null,"/portfolio/"+data.id)
+				this.changeTitle("JUNYA KONO | "+data.id)
 			}
 		})
 	}
@@ -141,7 +145,7 @@ export default class EventFunctions{
 	/**
 	 * close_detail
 	 */
-	close_detail(){
+	close_detail = () => {
 		$(".portfolio").css({
 			"overflow": "scroll",
 			"height": "auto"
@@ -153,19 +157,25 @@ export default class EventFunctions{
 		TweenMax.to(".product",0.5,{scale: 1,ease: Expo.easeInOut,delay: 1.5})
 		TweenMax.to("#detail",1,{bottom: "-100%",ease: Expo.easeInOut})
 		window.history.pushState(null,null,"/portfolio")
+		this.changeTitle("JUNYA KONO | protfolio")
 	}
 
-	/*
-	*		set html data -> detail view
-	*/
 	/**
 	 * setDetail
 	 * @param { object } data ajaxでとってきたデータ
 	 */
-	setDetail(data){
+	setDetail = (data) => {
 		var $detail = $("#detail");
 		$detail.css("background-image","url("+data.bgUrl+")")
 		$("#detail .content").html(data.html)
+	}
+
+	/**
+	 * changeTitle
+	 * @param  { string } text Titleにする文字
+	 */
+	changeTitle = (text) => {
+		$("title").text(text)
 	}
 
 }

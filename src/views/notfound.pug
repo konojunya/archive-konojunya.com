@@ -1,0 +1,37 @@
+doctype html
+html(lang="ja")
+	head
+		include includes/_notfound_head.pug
+	body
+		.notfound-view
+			h1 404 Not Found
+				span#dots
+			p ご指定のページは現在閉鎖しているか、純也が食べたか、URLが間違えている場合がございます。
+			br
+			a(href="//konojunya.com") TOP PAGE
+	script(type="text/javascript").
+		window.onload = function(){
+			setInterval(function(){
+				animationDot(getDotsArray());
+			},~(Math.random()*1000)+3000)
+		}
+
+		var dots = document.getElementById("dots");
+		var dotsArray = [".","."],flg = true;
+
+		function animationDot(dotsArray){
+			dots.innerText = dotsArray.join("");
+		}
+
+		function getDotsArray(){
+			if(dotsArray.length >= 2){
+				dotsArray.pop();
+			}else{
+				if(flg){
+					dotsArray.push(".");
+				}
+				dotsArray.push(".");
+				flg = !flg;
+			}
+			return dotsArray;
+		}

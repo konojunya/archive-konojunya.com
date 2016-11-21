@@ -14,7 +14,7 @@ var
 /* javascript */
 gulp.task("es6",function(){
 	browserify({entries: ["src/es6/app.js"],debug: true})
-		.transform(babelify)
+		.transform("babelify",{presets: ["es2015","stage-0"]})
 		.bundle()
 		.pipe(source("bundle.js"))
 		.pipe(plumber())

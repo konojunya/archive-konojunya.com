@@ -12,6 +12,13 @@ style.
     width: 100%;
     height: 100%;
   }
+  #detail .description a{
+    color: black;
+  }
+  #detail .description iframe{
+    display: block;
+    margin: 30px auto;
+  }
   
 .detail-content
   .detail-flexbox
@@ -26,3 +33,45 @@ style.
       .description
         h3.description-title DESCRIPTION
         p.text
+          | Webラジコンは
+          strong 「HAL Event Week 2016」
+          | という
+          a(href="//www.hal.ac.jp/" target="_blank") 学校法人・専門学校HAL
+          | の行っている
+          br
+          | 1年の集大成を発表する場で発表したIoT製品です。
+          br
+          br
+          | このIoT製品は、ラジコンを自分のスマートフォンで操作する。というものです。
+          br
+          | こだわった点としては、アプリではなくWebで作りきるということです。
+          br
+          | HEW（HAL Event Week）では、来場者が多数来てどんどんプレゼンをしていかないといけないので、
+          br
+          | アプリをダウンロードしてもらう時間を省くことを意識してWebにしました。
+          br
+          | 会場でアプリがインストールされているスマホを貸し出しても良かったですが、自分のスマホがコントローラーになるというのも楽しみの一つだったので上記の方法をとりました。
+          br
+          br
+          .img
+            img(src="/images/contents/web_radicon/web_radicon.png")
+          br
+          br
+          | 製作者は僕と
+          a(href="//twitter.com/taikippppp" target="_blank") 葛巻
+          | で製作し、葛巻はロボット側（車の操作）を。僕はスマートフォンの画面の設計と実装を担当しました。
+          br
+          .img
+            img(src="/images/contents/web_radicon/screen_shot.png")
+          br
+          | チュートリアル画面を作ったり、管理者が強制的に画面を操作できるような仕組みも作り、
+          br
+          | HEWの結果としては、金賞をとりました。
+          br
+          br
+          | このプロダクトは
+          a(href="//iotlt.connpass.com/") IoTLT
+          | でも、発表したので詳しい内容は以下に貼っておきたいと思います。
+          iframe(src="//www.slideshare.net/slideshow/embed_code/key/xDfA85FsIcuGwz" width="514" height="422" frameborder="0" scrolling="no" allowfullscreen)
+          br
+          br
