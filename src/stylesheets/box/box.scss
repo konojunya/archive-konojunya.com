@@ -1,0 +1,16 @@
+.boxes{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  .box{
+    position: relative;
+    width: 25vw;
+    height: 25vw;
+    p{
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+    }
+  }
+}
