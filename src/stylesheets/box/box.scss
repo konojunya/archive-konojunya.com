@@ -14,3 +14,17 @@
     }
   }
 }
+
+@media (max-width: 800px) {
+  .boxes .box{
+    width: 33.333vw;
+    height: 33.333vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .boxes .box{
+    width: 50vw;
+    height: 50vw;
+  }
+}
