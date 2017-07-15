@@ -2,6 +2,17 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
-  height: 1000px;
+  width: 60%;
+  padding: 10px;
+  h1{
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 900px) {
+  #wrapper {
+    position: relative;
+    width: 100%;
+    padding: 10px 20px;
+  }  
 }

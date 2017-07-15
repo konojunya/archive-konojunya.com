@@ -1,0 +1,10 @@
+.listItem {
+  margin: 5px 0;
+  margin-left: 20px;
+  font-size: 1.1rem;
+  letter-spacing: 1.1px;
+  list-style: none;
+  &:before {
+    content: "- "
+  }
+}
