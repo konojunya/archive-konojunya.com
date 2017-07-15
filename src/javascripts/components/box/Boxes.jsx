@@ -1,22 +1,20 @@
 import React from "react"
 
 import Box from "./Box.jsx"
+import boxConfig from "../../../../config/box"
 
 export default class Boxes extends React.Component {
 
   constructor(props){
     super(props)
-    this.state = {
-      items: ["About","GIOGIO","HOGE","FOO","About","GIOGIO","HOGE","FOO"]
-    }
   }
 
   render(){
     return(
       <div className="boxes">
         {
-          this.state.items.map( (title,i) => {
-            return <Box title={title} key={i} />
+          boxConfig.map( (item,i) => {
+            return <Box title={item.title} key={i} />
           })
         }
       </div>
