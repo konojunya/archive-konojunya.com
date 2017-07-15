@@ -1,5 +1,0 @@
-deployment:
-  test:
-    branch: master
-    commands:
-      - exit 0
