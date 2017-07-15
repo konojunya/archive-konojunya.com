@@ -12,14 +12,13 @@ export default class Boxes extends React.Component {
   }
 
   render(){
-
-    var render = this.state.items.map( (title,i) =>{
-      return <Box title={title} key={i}/>
-    })
-
     return(
       <div className="boxes">
-        {render}
+        {
+          this.state.items.map( (title,i) => {
+            return <Box title={title} key={i} />
+          })
+        }
       </div>
     )
   }
