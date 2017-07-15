@@ -10,6 +10,7 @@ export default class Base extends React.Component {
         <head>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="style.css"/>
+        <title>konojunya.com/README.md</title>
         </head>
         <body>
           <App/>
