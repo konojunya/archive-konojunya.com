@@ -1,4 +1,3 @@
 node_modules/
 .sass-cache/
-dist/
-!dist/index.html
+build/
