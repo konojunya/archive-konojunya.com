@@ -22,8 +22,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       - run: npm test
-deployment:
-  staging:
-    branch: master
-    commands:
-      - ./deploy_staging.sh
+      - deploy:
+        name: sakura vps
+        commands:
+          - sh ./deploy_staging.sh
