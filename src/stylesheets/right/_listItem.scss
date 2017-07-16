@@ -8,3 +8,9 @@
     content: "- "
   }
 }
+
+@media (max-width: 400px) {
+  .listItem {
+    font-size: 0.9rem;
+  }
+}
