@@ -28,7 +28,7 @@ const baseData = {
   hobby: {
     label: "list",
     title: "Hobby",
-    items: ["ボルダリング","読書（技術書,小説）"]
+    items: ["プログラミング","ボルダリング","読書（技術書,小説）"]
   },
   likes: {
     label: "text",
