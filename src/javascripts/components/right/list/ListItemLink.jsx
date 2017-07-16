@@ -7,8 +7,11 @@ export default class ListItemLink extends React.Component {
   }
 
   render(){
+
     return(
-      <li className="listItemLink">{this.props.text}: [{this.props.linkName}](<a href={this.props.link} target="_blank">{this.props.link}</a>)</li>
+      <li className="listItemLink">
+        {this.props.text}: [{this.props.linkName}](<a href={this.props.link} target="_blank">{this.props.link}</a>)
+      </li>
     )
   }
 

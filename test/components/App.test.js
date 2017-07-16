@@ -10,3 +10,8 @@ const wrapper = shallow(<App/>)
 test("element is div", (t) => {
   t.is(wrapper.type(), "div")
 })
+
+// 子要素に2つのコンポーネントがあるか
+test("child element length is 2", (t) => {
+  t.is(wrapper.children().length,2)
+})

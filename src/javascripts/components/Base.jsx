@@ -23,6 +23,7 @@ export default class Base extends React.Component {
           <meta property="og:email" content="junya.developer@gmail.com" />
           <meta name="viewport" content="width=device-width, initial-scale=1"/>
           <link rel="stylesheet" href="style.css"/>
+          <script src="analytics.js" />
           <title>konojunya.com/README.md</title>
         </head>
         <body>
