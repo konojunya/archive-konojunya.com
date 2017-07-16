@@ -9,8 +9,8 @@ jobs:
 
       - restore_cache:
         keys:
-        - v1-dependencies-{{ checksum "package.json" }}
-        - v1-dependencies-
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
 
       - run: npm install
 
@@ -20,3 +20,9 @@ jobs:
         key: v1-dependencies-{{ checksum "package.json" }}
       
       - run: npm test
+      - deploy:
+        name: Deploy to Sakura VPS
+        command: |
+          if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            ./deploy.sh
+          fi
