@@ -26,7 +26,7 @@ test("child element text is # README", t => {
   t.is(wrapper.childAt(0).text(), "# README")
 })
 
-// 子要素が8つレンダリングされているか
-test("rendered element length is 8", t => {
-  t.is(wrapper.children().length, 8)
+// 子要素が12コレンダリングされているか
+test("rendered element length is 12", t => {
+  t.is(wrapper.children().length, 12)
 })
