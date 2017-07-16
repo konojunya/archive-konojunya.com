@@ -24,14 +24,7 @@ jobs:
           name: Deploy to Sakura VPS
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              cat <<EOF >> $HOME/.ssh/config
-              Host sakura
-                HostName konojunya.com
-                User konojunya
-                Port 9733
-                StrictHostKeyChecking no
-              EOF
-              ssh sakura
+              ssh konojunya@$IP -p $PORT -o StrictHostKeyChecking=no
               cd $DIR
               git pull origin master
               pm2 reload konojunya.com
