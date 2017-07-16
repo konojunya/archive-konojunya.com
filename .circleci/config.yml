@@ -6,9 +6,11 @@ jobs:
     working_directory: ~/konojunya.com
     steps:
       - checkout
-      
+
       - restore_cache:
-        keys: dependency-cache-{{ checksum "package.json" }}
+        keys:
+        - v1-dependencies-{{ checksum "package.json" }}
+        - v1-dependencies-
 
       - run: npm install
 
