@@ -24,6 +24,5 @@ jobs:
       - run: npm test
       - deploy:
         name: sakura vps
-        commands:
-          steps:
-            - sh deploy.sh
+        step:
+          - sh deploy.sh
