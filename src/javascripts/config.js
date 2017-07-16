@@ -55,6 +55,11 @@ const baseData = {
         url: "https://github.com/konojunya"
       },
       {
+        text: "Instagram",
+        urlName: "_junyaman",
+        url: "https://instagram.com/_junyaman"
+      },
+      {
         text: "Qiita",
         urlName: "konojunya",
         url: "https://qiita.com/konojunya"
