@@ -23,6 +23,7 @@ jobs:
         
       - run: npm test
       - deploy:
-        name: sakura vps
-        command:
-          sh deploy.sh
+        command: |
+          if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            ./deploy.sh
+          fi
