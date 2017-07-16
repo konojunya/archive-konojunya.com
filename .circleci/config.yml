@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:8.1.4
-    working_directory: /var/www/html/konojunya.com
+    working_directory: ~/konojunya.com
     steps:
       - checkout
 
