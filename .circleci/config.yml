@@ -25,12 +25,12 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               cat <<EOF >> $HOME/.ssh/config
-Host sakura
-HostName konojunya.com
-User konojunya
-Port 9733
-StrictHostKeyChecking no
-EOF
+              Host sakura
+                HostName konojunya.com
+                User konojunya
+                Port 9733
+                StrictHostKeyChecking no
+              EOF
               ssh sakura
               cd $DIR
               git pull origin master
