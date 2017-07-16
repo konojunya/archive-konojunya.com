@@ -24,7 +24,7 @@ jobs:
       - run: npm test
       - deploy:
         name: sakura vps
-        commands:
+        command: |
           if [ "${CIRCLE_BRANCH}" == "master" ]; then
             ssh konojunya@153.126.171.5 -p 9733
             cd /var/www/html/konojunya.com
