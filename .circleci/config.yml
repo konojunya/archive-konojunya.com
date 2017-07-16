@@ -24,7 +24,7 @@ jobs:
           name: Deploy to Sakura VPS
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ssh konojunya@$IP -p $PORT
+              yes | ssh konojunya@$IP -p $PORT
               cd $DIR
               git pull origin master
               pm2 reload konojunya.com
