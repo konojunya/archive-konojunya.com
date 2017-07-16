@@ -11,3 +11,15 @@
     color: #1976D2;
   }
 }
+
+@media (max-width: 400px) {
+  .listItemLink {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .listItemLink {
+    font-size: 0.8rem;
+  }
+}
