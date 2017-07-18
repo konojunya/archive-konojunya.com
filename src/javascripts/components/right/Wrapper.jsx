@@ -16,6 +16,7 @@ export default class Wrapper extends React.Component {
       <div id="wrapper">
         <h1># README</h1>
         <img src="https://circleci.com/gh/konojunya/konojunya.com/tree/master.svg?style=shield&circle-token=23da787516c0584c1519768c1c36e804c06bb72e" alt="circleci badge" />
+        <img src="https://img.shields.io/badge/coverage-68%25-yellow.svg" alt="coverage badge" />
         <img src="https://img.shields.io/badge/node-v8.1.4-brightgreen.svg" alt="node version badge" />
         <img src="https://img.shields.io/badge/npm-v5.3.0-blue.svg" alt="npm version badge" />
         <img src="https://img.shields.io/badge/platform-web-lightgray.svg" alt="platform badge" />
