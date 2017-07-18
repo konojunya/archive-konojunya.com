@@ -8,6 +8,9 @@
     "build:watch": "webpack --progress --color -w",
     "server": "pm2 start pm2/local.json --no-daemon",
     "dev": "concurrently \"npm run build:watch\" \"npm run server\" \"npm run test:watch\"",
+    "lint": "npm run lint:css",
+    "lint:watch": "stylelint src/**/*.scss --watch",
+    "lint:css": "stylelint src/**/*.scss",
     "test": "ava --verbose",
     "test:watch": "ava --verbose -w",
     "cover": "nyc --reporter=lcov --reporter=text npm run test"
@@ -49,6 +52,8 @@
     "react-test-renderer": "^15.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "stylelint": "^8.0.0",
+    "stylelint-config-standard": "^17.0.0",
     "webpack": "^3.1.0"
   },
   "ava": {
