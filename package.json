@@ -66,5 +66,10 @@
     ],
     "powerAssert": true,
     "babel": "inherit"
+  },
+  "nyc": {
+    "extension": [
+      ".jsx"
+    ]
   }
 }
