@@ -9,7 +9,8 @@
     "server": "pm2 start pm2/config.json --no-daemon",
     "dev": "concurrently \"npm run build:watch\" \"npm run server\" \"npm run test:watch\"",
     "test": "ava --verbose",
-    "test:watch": "ava --verbose -w"
+    "test:watch": "ava --verbose -w",
+    "cover": "nyc --reporter=lcov --reporter=text npm run test"
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,7 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "jsdom": "^8.3.1",
     "node-sass": "^4.5.3",
+    "nyc": "^11.0.3",
     "react-addons-test-utils": "^15.6.0",
     "react-test-renderer": "^15.6.1",
     "sass-loader": "^6.0.6",
