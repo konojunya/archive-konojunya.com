@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --progress --color",
     "build:watch": "webpack --progress --color -w",
-    "server": "pm2 start pm2/config.json --no-daemon",
+    "server": "pm2 start pm2/local.json --no-daemon",
     "dev": "concurrently \"npm run build:watch\" \"npm run server\" \"npm run test:watch\"",
     "test": "ava --verbose",
     "test:watch": "ava --verbose -w"
