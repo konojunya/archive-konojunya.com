@@ -1,6 +1,6 @@
 # my portfolio site
 
-![](https://user-images.githubusercontent.com/12035578/28247594-8376199e-6a6e-11e7-9e1d-bf586a2de6fc.png)
+![](https://user-images.githubusercontent.com/12035578/28760294-ddea3130-75e0-11e7-88e3-20c6ce579683.png)
 
 [konojunya.com](http://www.konojunya.com)
 
