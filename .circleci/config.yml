@@ -8,7 +8,6 @@ jobs:
 
     steps:
       - checkout
-      - run
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - save_cache:
