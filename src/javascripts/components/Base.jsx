@@ -13,7 +13,7 @@ export default class Base extends React.Component {
           <meta property="og:title" content="konojunya.com/README.md" />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="http://www.konojunya.com" />
-          <meta property="og:image" content="http://www.konojunya.com/ogp-image.png" />
+          <meta property="og:image" content="https://s3-us-west-2.amazonaws.com/konojunya.com/ogp-image.png" />
           <meta property="og:site_name" content="konojunya.com/README.md" />
           <meta property="og:description" content="大阪でフロントエンドエンジニアとして活動しているHAL大阪の学生です！基本的にはJSでコソコソしています。" />
           <meta property="fb:app_id" content="100007518556907" />

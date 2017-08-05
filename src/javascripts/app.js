@@ -9,5 +9,5 @@ import App from "./components/App.jsx"
 
 render(
   <App/>,
-  document.getElementById("react")  
+  document.getElementById("react")
 )
