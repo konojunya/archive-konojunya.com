@@ -9,8 +9,10 @@ const app = express()
 app.use(express.static("build"))
 app.use(express.static("public"))
 
+const html = ReactDOMServer.renderToString(<Base/>);
+
 app.get("/", (req,res) => {
-  res.send(ReactDOMServer.renderToString(<Base/>))
+  res.send(html)
 })
 
 app.listen(3000,()=>{
