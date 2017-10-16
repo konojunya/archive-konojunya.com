@@ -23,7 +23,7 @@ test("child element is img", (t) => {
 
 // 子要素のsrcが /pigg.png
 test("src of child element is /pigg.png", t => {
-  t.is(wrapper.childAt(0).props().src, "/pigg.png")
+  t.is(wrapper.childAt(0).props().src, "https://s3-us-west-2.amazonaws.com/konojunya.com/pigg.png")
 })
 
 // 子要素のaltが page image
