@@ -18,6 +18,9 @@ const baseData = {
     label: "list",
     title: "Works",
     items: [
+      "Engineer at Gashoo",
+      "Engineer at Progate",
+      "Treasure at VOYAGE GROUP",
       "Internship at CyberAgent",
       "Frontend engineer at Lebe Inc.",
       "Evangelist at Progate",
