@@ -7,15 +7,12 @@ jobs:
 
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: npm install
           command: npm install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - .node_modules
+      - run:
+          name: lint
+          command: npm run lint
       - run:
           name: test
           command: npm test
