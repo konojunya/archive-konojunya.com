@@ -18,6 +18,7 @@ const baseData = {
     label: "list",
     title: "Works",
     items: [
+      "Manager at Alberii",
       "Engineer at Gashoo",
       "Engineer at Progate",
       "Treasure at VOYAGE GROUP",

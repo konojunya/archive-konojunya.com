@@ -1,14 +1,14 @@
 var webpack = require("webpack")
 var path = require("path")
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
- 
+
 module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
   entry: __dirname + "/src/javascripts/app.js",
   output: {
-    path: __dirname + "/build",
+    path: __dirname + "/public",
     filename: 'bundle.js',
     libraryTarget: "umd"
   },
