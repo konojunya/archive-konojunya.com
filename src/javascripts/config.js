@@ -19,14 +19,14 @@ const baseData = {
     title: "Works",
     items: [
       "Manager at Alberii",
-      "Engineer at Gashoo",
-      "Engineer at Progate",
-      "Treasure at VOYAGE GROUP",
-      "Internship at CyberAgent",
-      "Frontend engineer at Lebe Inc.",
       "Evangelist at Progate",
-      "Mentor at CA TechKids",
-      "Web engineer at Far Connection"
+      "Ex-Engineer at Gashoo",
+      "Ex-Engineer at Progate",
+      "Ex-Treasure at VOYAGE GROUP",
+      "Ex-Internship at CyberAgent",
+      "Ex-Frontend engineer at Lebe Inc.",
+      "Ex-Mentor at CA TechKids",
+      "Ex-Web engineer at Far Connection"
     ]
   },
   hobby: {
