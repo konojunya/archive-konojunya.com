@@ -18,15 +18,14 @@ const baseData = {
     label: "list",
     title: "Works",
     items: [
+      "Eegineer at MIWAKU",
       "Manager at Alberii",
-      "Evangelist at Progate",
       "Ex-Engineer at Gashoo",
       "Ex-Engineer at Progate",
       "Ex-Treasure at VOYAGE GROUP",
       "Ex-Internship at CyberAgent",
       "Ex-Frontend engineer at Lebe Inc.",
-      "Ex-Mentor at CA TechKids",
-      "Ex-Web engineer at Far Connection"
+      "Ex-Mentor at CA TechKids"
     ]
   },
   hobby: {
