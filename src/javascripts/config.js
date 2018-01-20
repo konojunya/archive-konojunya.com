@@ -12,7 +12,7 @@ const baseData = {
   skill: {
     label: "list",
     title: "Skill",
-    items: ["HTML","CSS","JavaScript","Swift","Node.js","Tap Dance"]
+    items: ["HTML","CSS","JavaScript","Swift","Node.js","Golang","Tap Dance"]
   },
   works: {
     label: "list",
