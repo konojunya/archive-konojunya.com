@@ -4,8 +4,8 @@
   "description": "This is my home page.",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack --progress --color",
-    "build:watch": "webpack --progress --color -w",
+    "build": "webpack-dashboard -- webpack --progress --color",
+    "build:watch": "webpack-dashboard -- webpack -d --watch",
     "test": "ava --verbose",
     "test:watch": "ava --verbose -w",
     "cover": "nyc --reporter=lcov --reporter=text npm run test"
@@ -25,7 +25,6 @@
   },
   "devDependencies": {
     "ava": "^0.21.0",
-    "nyc": "^11.0.3",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
@@ -33,11 +32,13 @@
     "css-loader": "^0.28.8",
     "file-loader": "^1.1.6",
     "node-sass": "^4.7.2",
+    "nyc": "^11.0.3",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
     "vue-loader": "^13.7.0",
     "vue-template-compiler": "^2.5.13",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-dashboard": "^1.1.1"
   },
   "ava": {
     "files": [

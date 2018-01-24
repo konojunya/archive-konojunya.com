@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var DashboardPlugin = require('webpack-dashboard/plugin')
 
 module.exports = {
   entry: "./src/app.js",
@@ -11,6 +12,7 @@ module.exports = {
     rules: [{
         test: /\.vue$/,
         loader: 'vue-loader',
+        include: path.resolve(__dirname, "src"),
         options: {
           loaders: {
             'scss': 'vue-style-loader!css-loader!sass-loader',
@@ -21,6 +23,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        include: path.resolve(__dirname, "src"),
         exclude: /node_modules/
       },
       {
@@ -29,10 +32,6 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
-      },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
       }
     ]
   },
@@ -49,7 +48,10 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins: [
+    new DashboardPlugin()
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {
