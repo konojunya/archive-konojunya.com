@@ -1,7 +1,7 @@
 import Vue from 'vue';
 
 // components
-import App from './components/index/index.vue'
+import App from './components/App.vue'
 
 Vue.component("app", App)
 
