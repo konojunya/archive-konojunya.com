@@ -1,7 +1,11 @@
-import { h, app, View } from "hyperapp"
+import { h, View } from "hyperapp";
 
-const view: View<{}, {}> = () => (
-  <h1>export component</h1>
+interface State {
+  readonly name: string;
+}
+
+const view: View<State, {}> = (state) => (
+  <h1>{state.name}</h1>
 )
 
 export default view;
