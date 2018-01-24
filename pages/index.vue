@@ -1,24 +1,6 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        konojunya.com
-      </h1>
-      <h2 class="subtitle">
-        大阪を拠点にフロントエンドエンジニアとして活動しています。<br/>HAL大阪IT学部WEB開発学科。<br/><br/>基本的にはJSでコソコソ遊んでいます。IoTにも興味があり、主催者としてIoT縛りの勉強会(IoTLT)などをしています。<br/><br/>サーバーサイドはNode.jsやGoを書いています。
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
+  <section>
+    <app-logo></app-logo>
   </section>
 </template>
 
@@ -33,32 +15,4 @@ export default {
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
