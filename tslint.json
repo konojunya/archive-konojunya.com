@@ -1,0 +1,32 @@
+{
+  "extends": "tslint-config-airbnb",
+  "rules": {
+    "jsx-no-lambda": [false],
+    "jsx-boolean-value": [true, "never"],
+    "jsx-no-multiline-js": false,
+    "no-namespace": [false],
+    "interface-name": [true, "never-prefix"],
+    "no-empty-interface": false,
+    "no-var-requires": false,
+    "no-unused-variable": [true],
+    "ordered-imports": [false],
+    "object-literal-sort-keys": false,
+    "quotemark": [true, "single", "jsx-double"],
+    "member-ordering": [false],
+    "max-line-length": [false],
+    "no-string-literal": false,
+    "member-access": false,
+    "trailing-comma": [true, {
+      "multiline": {
+        "objects": "never",
+        "arrays": "never",
+        "functions": "never",
+        "typeLiterals": "ignore"
+      }
+    }],
+    "no-console": [true],
+    "variable-name": false,
+    "one-variable-per-declaration": [false],
+    "no-shadowed-variable": false
+  }
+}
