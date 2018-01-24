@@ -1,6 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
 var DashboardPlugin = require('webpack-dashboard/plugin')
+const PrerendererWebpackPlugin = require('prerenderer-webpack-plugin')
+const BrowserRenderer = PrerendererWebpackPlugin.BrowserRenderer
 
 module.exports = {
   entry: "./src/app.js",
@@ -50,7 +52,12 @@ module.exports = {
   },
   devtool: '#eval-source-map',
   plugins: [
-    new DashboardPlugin()
+    new DashboardPlugin(),
+    new PrerendererWebpackPlugin({
+      staticDir: __dirname,
+      routes: ['/'],
+      renderer: new BrowserRenderer()
+    })
   ]
 }
 
