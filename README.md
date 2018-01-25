@@ -14,14 +14,26 @@ this is my protfolio web site.
 $ npm install
 ```
 
-## build
+## development
 
 ```
-$ npm run build
+$ npm run dev
 ```
 
 ## testing
 
 ```
 $ npm test
+```
+
+## linter
+
+```
+$ npm run lint
+```
+
+## generate
+
+```
+$ npm run generate
 ```

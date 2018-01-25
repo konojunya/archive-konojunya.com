@@ -4,7 +4,7 @@ jobs:
   test:
     working_directory: ~/konojunya.com
     docker:
-      - image: circleci/node:8.1.4
+      - image: makki0205/deploy
 
     steps:
       - checkout
@@ -17,12 +17,12 @@ jobs:
       - save_cache:
           key: node-{{ epoch }}
           paths:
-            - node_modules
+            - .
 
   deploy:
     working_directory: ~/konojunya.com
     docker:
-      - image: beevelop/nodejs-python
+      - image: makki0205/deploy
 
     steps:
       - checkout
@@ -30,14 +30,8 @@ jobs:
           keys:
             - node
       - run:
-          name: npm install
-          command: npm install
-      - run:
-          name: build
-          command: npm run build
-      - run:
-          name: aws cli install
-          command: pip install awscli
+          name: generate
+          command: npm run generate
       - run:
           name: aws login
           command: make aws/credentials
