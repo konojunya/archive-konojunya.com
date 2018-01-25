@@ -20,12 +20,6 @@ $ npm install
 $ npm run build
 ```
 
-## up to server
-
-```
-$ npm run server
-```
-
 ## testing
 
 ```

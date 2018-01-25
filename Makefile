@@ -4,4 +4,5 @@ aws/credentials:
 	aws configure set aws_secret_access_key $$AWS_SECRET_ACCESS_KEY
 
 aws/deploy:
-	aws s3 sync public/ s3://konojunya.com/ --delete --acl public-read
+	aws s3 rm s3://konojunya.com/index.html
+	aws s3 sync dist/ s3://konojunya.com/ --acl public-read
