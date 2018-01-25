@@ -28,9 +28,27 @@ export default {
     MolList,
     MolListLink
   },
-  mounted() {
+  created() {
     this.config = config
-    console.log(config)
   }
 }
 </script>
+
+<style lang="sass">
+#wrapper
+  position: absolute
+  top: 0
+  right: 0
+  width: 60%
+  padding: 10px
+  img
+    margin: 0px 5px 10px 5px
+  h1
+    padding: 10px 0
+@media (max-width: 900px)
+  #wrapper
+    position: relative
+    width: 100%
+    padding: 10px 20px
+</style>
+
