@@ -27,6 +27,7 @@ module.exports = {
       { hid: 'twitter:url', name: 'twitter:url', content: 'https://konojunya.com' }
     ],
     link: [
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lato:300,400,700,900' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
