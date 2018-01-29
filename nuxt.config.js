@@ -41,6 +41,23 @@ module.exports = {
   plugins: [
     { src: 'plugins/ga.js', ssr: false }
   ],
+  /**
+   * Modules
+   */
+  modules: [
+    '@nuxtjs/pwa',
+  ],
+  /**
+   * manifest
+   */
+  manifest: {
+    name: 'konojunya.com/README.md',
+    title: 'konojunya.com/README.md',
+    'og:title': 'konojunya.com/README.md',
+    description: '大阪を拠点にフロントエンドエンジニアとして活動しています。HAL大阪IT学部WEB開発学科。基本的にはJSでコソコソ遊んでいます。IoTにも興味があり、主催者としてIoT縛りの勉強会(IoTLT)などをしています。サーバーサイドはNode.jsやGoを書いています。',
+    'og:description': '大阪を拠点にフロントエンドエンジニアとして活動しています。HAL大阪IT学部WEB開発学科。基本的にはJSでコソコソ遊んでいます。IoTにも興味があり、主催者としてIoT縛りの勉強会(IoTLT)などをしています。サーバーサイドはNode.jsやGoを書いています。',
+    lang: 'ja'
+  },
   /*
   ** Build configuration
   */
