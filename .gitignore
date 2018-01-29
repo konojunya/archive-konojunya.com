@@ -9,3 +9,6 @@ npm-debug.log
 
 # coverage
 .coverage/
+
+# service worker
+sw.*
