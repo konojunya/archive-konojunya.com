@@ -35,16 +35,13 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   /**
-   * Plugins
-   */
-  plugins: [
-    { src: 'plugins/ga.js', ssr: false }
-  ],
-  /**
    * Modules
    */
   modules: [
     '@nuxtjs/pwa',
+    ['@nuxtjs/google-analytics', {
+      id: "UA-66290615-1"
+    }]
   ],
   /**
    * manifest
