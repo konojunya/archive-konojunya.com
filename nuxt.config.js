@@ -27,7 +27,6 @@ module.exports = {
       { hid: 'twitter:url', name: 'twitter:url', content: 'https://konojunya.com' }
     ],
     link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lato:300,400,700,900' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
@@ -57,6 +56,15 @@ module.exports = {
     description: '大阪を拠点にフロントエンドエンジニアとして活動しています。HAL大阪IT学部WEB開発学科。基本的にはJSでコソコソ遊んでいます。IoTにも興味があり、主催者としてIoT縛りの勉強会(IoTLT)などをしています。サーバーサイドはNode.jsやGoを書いています。',
     'og:description': '大阪を拠点にフロントエンドエンジニアとして活動しています。HAL大阪IT学部WEB開発学科。基本的にはJSでコソコソ遊んでいます。IoTにも興味があり、主催者としてIoT縛りの勉強会(IoTLT)などをしています。サーバーサイドはNode.jsやGoを書いています。',
     lang: 'ja'
+  },
+  workbox: {
+    runtimeCaching: [
+      {
+        urlPattern: 'https://s3-us-west-2.amazonaws.com/konojunya.com/.*',
+        handler: 'cacheFirst',
+        method: 'GET'
+      }
+    ]
   },
   /*
   ** Build configuration
