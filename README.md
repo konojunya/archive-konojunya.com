@@ -26,6 +26,10 @@ $ npm run dev
 $ npm test
 ```
 
+## coveralls
+
+https://coveralls.io/github/konojunya/konojunya.com
+
 ## linter
 
 ```

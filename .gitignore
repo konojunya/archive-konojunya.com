@@ -12,3 +12,6 @@ npm-debug.log
 
 # service worker
 sw.*
+
+# coveralls
+!.nyc_output/
