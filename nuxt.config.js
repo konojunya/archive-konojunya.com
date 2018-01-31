@@ -35,6 +35,10 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   /**
+   * plugin
+   */
+  plugins: ['~/plugins/i18n'],
+  /**
    * Modules
    */
   modules: [

@@ -1,0 +1,74 @@
+{
+  "name": {
+    "title": "Nome",
+    "text": "Junya Kono"
+  },
+  "about": {
+    "title": "Di",
+    "text": "```<br/>Sto lavorando come ingegnere front-end con sede a Osaka.<br/>Dipartimento di Sviluppo Web, Dipartimento IT di HAL Osaka.<br/><br/>Io di solito uso JavaScript. Sono anche interessato all'IoT, al gruppo di studio legato all'IoT (IoTLT) ecc. Come l'organizzatore.<br/><br/>Il lato server sta scrivendo Node.js e Golang.<br/>```"
+  },
+  "skill": {
+    "title": "Abilità",
+    "items": ["HTML","CSS","JavaScript","Swift","Node.js","Golang","tip tap"]
+  },
+  "works": {
+    "title": "Lavori",
+    "items": [
+      "Eegineer at MIWAKU",
+      "Ex-Engineer at Gashoo",
+      "Ex-Engineer at Progate",
+      "Ex-Internship at VOYAGE GROUP",
+      "Ex-Internship at CyberAgent",
+      "Ex-Frontend engineer at Lebe Inc.",
+      "Ex-Mentor at CA TechKids"
+    ]
+  },
+  "hobby": {
+    "title": "Passatempo",
+    "items": ["Programmazione","Bouldering","Leggere libri tecnici e romanzi"]
+  },
+  "likes": {
+    "title": "Piace",
+    "items": ["Le bizzarre avventure di JOJO"]
+  },
+  "contact": {
+    "title": "Contatto",
+    "items": [
+      {
+        "text": "Twitter",
+        "urlName": "@konojunya",
+        "url": "https://twitter.com/konojunya"
+      },
+      {
+        "text": "Facebook",
+        "urlName": "junya.developer",
+        "url": "https://facebook.com/junya.developer"
+      },
+      {
+        "text": "GitHub",
+        "urlName": "konojunya",
+        "url": "https://github.com/konojunya"
+      },
+      {
+        "text": "Instagram",
+        "urlName": "_junyaman",
+        "url": "https://instagram.com/_junyaman"
+      },
+      {
+        "text": "Qiita",
+        "urlName": "konojunya",
+        "url": "https://qiita.com/konojunya"
+      },
+      {
+        "text": "Ameblo",
+        "urlName": "konojunya0303",
+        "url": "https://ameblo.jp/konojunya0303"
+      },
+      {
+        "text": "Mail",
+        "urlName": "junya.developer@gmail.com",
+        "url": "mailto:junya.developer@gmail.com"
+      }
+    ]
+  }
+}

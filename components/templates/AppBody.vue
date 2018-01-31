@@ -2,22 +2,21 @@
   div#wrapper
     h1 # README
     img(src="https://circleci.com/gh/konojunya/konojunya.com/tree/master.svg?style=shield&circle-token=23da787516c0584c1519768c1c36e804c06bb72e", alt="circleci badge")
-    img(src="https://img.shields.io/badge/coverage-68%25-yellow.svg", alt="coverage badge")
-    img(src="https://img.shields.io/badge/node-v8.1.4-brightgreen.svg", alt="node version badge")
-    img(src="https://img.shields.io/badge/npm-v5.3.0-blue.svg", alt="npm version badge")
+    img(src="https://api.codeclimate.com/v1/badges/4fcf92ae80c89808c11b/maintainability", alt="code climate")
+    img(src="https://coveralls.io/repos/github/konojunya/konojunya.com/badge.svg?branch=develop", alt="coverage badge")
+    img(src="https://img.shields.io/badge/node-9.2.9-brightgreen.svg", alt="node version badge")
+    img(src="https://img.shields.io/npm/v/npm.svg", alt="npm version badge")
     img(src="https://img.shields.io/badge/platform-web-lightgray.svg", alt="platform badge")
-    mol-text(:title="config.name.title", :text="config.name.text")
-    mol-text(:title="config.about.title", :text="config.about.text")
-    mol-list(:title="config.skill.title", :items="config.skill.items")
-    mol-list(:title="config.works.title", :items="config.works.items")
-    mol-list(:title="config.hobby.title", :items="config.hobby.items")
-    mol-text(:title="config.likes.title", :text="config.likes.text")
-    mol-list-link(:title="config.contact.title", :items="config.contact.items")
+    mol-text(:title="name.title", :text="name.text")
+    mol-text(:title="about.title", :text="about.text")
+    mol-list(:title="skill.title", :items="skill.items")
+    mol-list(:title="works.title", :items="works.items")
+    mol-list(:title="hobby.title", :items="hobby.items")
+    mol-list(:title="likes.title", :items="likes.items")
+    mol-list-link(:title="contact.title", :items="contact.items")
 </template>
 
 <script>
-import config from '~/components/config'
-
 import MolText from '~/components/molecules/MolText.vue'
 import MolList from '~/components/molecules/MolList.vue'
 import MolListLink from '~/components/molecules/MolListLink.vue'
@@ -29,7 +28,34 @@ export default {
     MolListLink
   },
   created() {
-    this.config = config
+    this.name = {
+      title: this.$t('name.title'),
+      text: this.$t('name.text')
+    }
+    this.about = {
+      title: this.$t("about.title"),
+      text: this.$t("about.text")
+    }
+    this.skill = {
+      title: this.$t('skill.title'),
+      items: this.$t('skill.items')
+    }
+    this.works = {
+      title: this.$t('works.title'),
+      items: this.$t('works.items')
+    }
+    this.hobby = {
+      title: this.$t('hobby.title'),
+      items: this.$t('hobby.items'),
+    }
+    this.likes = {
+      title: this.$t('likes.title'),
+      items: this.$t('likes.items')
+    }
+    this.contact = {
+      title: this.$t('contact.title'),
+      items: this.$t('contact.items')
+    }
   }
 }
 </script>

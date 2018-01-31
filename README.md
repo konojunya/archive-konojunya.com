@@ -2,7 +2,7 @@
 
 ![](https://user-images.githubusercontent.com/12035578/28760320-0b86c7b6-75e1-11e7-890f-c85663717e87.png)
 
-[konojunya.com](http://www.konojunya.com)
+[konojunya.com](https://konojunya.com)
 
 ## overview
 
@@ -28,7 +28,11 @@ $ npm test
 
 ## coveralls
 
-https://coveralls.io/github/konojunya/konojunya.com
+[Corveralls](https://coveralls.io/github/konojunya/konojunya.com)
+
+## Code Climate
+
+[Code Climate](https://codeclimate.com/github/konojunya/konojunya.com)
 
 ## linter
 
