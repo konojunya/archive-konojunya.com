@@ -16,7 +16,7 @@ jobs:
           command: npm run lint
       - run:
           name: coverage
-          command: npm run cover
+          command: env COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN npm run cover
       - save_cache:
           key: node-{{ epoch }}
           paths:
