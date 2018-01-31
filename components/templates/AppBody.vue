@@ -6,13 +6,13 @@
     img(src="https://img.shields.io/badge/node-v8.1.4-brightgreen.svg", alt="node version badge")
     img(src="https://img.shields.io/badge/npm-v5.3.0-blue.svg", alt="npm version badge")
     img(src="https://img.shields.io/badge/platform-web-lightgray.svg", alt="platform badge")
-    mol-text(title="Name", :text="name")
-    mol-text(title="About", :text="about")
-    mol-list(title="Skill", :items="skill")
-    mol-list(title="Works", :items="works")
-    mol-list(title="Hobby", :items="hobby")
-    mol-list(title="Likes", :items="likes")
-    mol-list-link(title="Contact", :items="contact")
+    mol-text(:title="name.title", :text="name.text")
+    mol-text(:title="about.title", :text="about.text")
+    mol-list(:title="skill.title", :items="skill.items")
+    mol-list(:title="works.title", :items="works.items")
+    mol-list(:title="hobby.title", :items="hobby.items")
+    mol-list(:title="likes.title", :items="likes.items")
+    mol-list-link(:title="contact.title", :items="contact.items")
 </template>
 
 <script>
@@ -27,13 +27,34 @@ export default {
     MolListLink
   },
   created() {
-    this.name = this.$t('name')
-    this.about = this.$t("about")
-    this.skill = this.$t('skill')
-    this.works = this.$t('works')
-    this.hobby = this.$t('hobby')
-    this.likes = this.$t('likes')
-    this.contact = this.$t('contact')
+    this.name = {
+      title: this.$t('name.title'),
+      text: this.$t('name.text')
+    }
+    this.about = {
+      title: this.$t("about.title"),
+      text: this.$t("about.text")
+    }
+    this.skill = {
+      title: this.$t('skill.title'),
+      items: this.$t('skill.items')
+    }
+    this.works = {
+      title: this.$t('works.title'),
+      items: this.$t('works.items')
+    }
+    this.hobby = {
+      title: this.$t('hobby.title'),
+      items: this.$t('hobby.items'),
+    }
+    this.likes = {
+      title: this.$t('likes.title'),
+      items: this.$t('likes.items')
+    }
+    this.contact = {
+      title: this.$t('contact.title'),
+      items: this.$t('contact.items')
+    }
   }
 }
 </script>
