@@ -1,18 +1,18 @@
 {
   "name": {
-    "title": "Name",
+    "title": "名",
     "text": "Junya Kono"
   },
   "about": {
-    "title": "About",
-    "text": "```<br/>I'm working as a front-end engineer based in Osaka.<br/>Department of Web Development, HAL Osaka IT Department.<br/><br/>I usually use JavaScript. I also am interested in IoT, IoT tied study group (IoTLT) etc as the organizer.<br/><br/>The server side is writing Node.js and Golang.<br/>```"
+    "title": "關於",
+    "text": "```<br/>我在大阪工作，擔任前端工程師.<br/>HAL大阪IT部門Web開發部門。<br/><br/>我通常使用JavaScript。 我也對IoT，物聯網研究小組（IoTLT）等有興趣。<br/><br/>服務器端正在編寫Node.js和Golang。<br/>```"
   },
   "skill": {
-    "title": "Skill",
+    "title": "技能",
     "items": ["HTML","CSS","JavaScript","Swift","Node.js","Golang","Tap Dance"]
   },
   "works": {
-    "title": "Works",
+    "title": "一份工作",
     "items": [
       "Eegineer at MIWAKU",
       "Ex-Engineer at Gashoo",
@@ -24,15 +24,15 @@
     ]
   },
   "hobby": {
-    "title": "Hobby",
-    "items": ["Programming","Bouldering","Reading technical books and novels"]
+    "title": "愛好",
+    "items": ["程序設計","抱石","閱讀（技術書籍，小說）"]
   },
   "likes": {
-    "title": "Likes",
-    "items": ["JOJO'S BIZARRE ADVENTURE"]
+    "title": "喜歡",
+    "items": ["JoJo的奇妙冒險"]
   },
   "contact": {
-    "title": "Contact",
+    "title": "聯繫地址",
     "items": [
       {
         "text": "Twitter",
@@ -65,7 +65,7 @@
         "url": "https://ameblo.jp/konojunya0303"
       },
       {
-        "text": "E-mail",
+        "text": "電子郵件",
         "urlName": "junya.developer@gmail.com",
         "url": "mailto:junya.developer@gmail.com"
       }

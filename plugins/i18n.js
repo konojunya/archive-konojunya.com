@@ -34,8 +34,6 @@ export default ({ app, req, isClient }) => {
   } else if(req) {
     locale = req.headers['accept-language'].split(',')[0].toLocaleLowerCase().substr(0, 2)
   }
-  //test
-  locale = "it"
   app.i18n = new VueI18n({
     locale: locale || 'ja',
     fallbackLocale: 'ja',
