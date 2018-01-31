@@ -6,18 +6,16 @@
     img(src="https://img.shields.io/badge/node-v8.1.4-brightgreen.svg", alt="node version badge")
     img(src="https://img.shields.io/badge/npm-v5.3.0-blue.svg", alt="npm version badge")
     img(src="https://img.shields.io/badge/platform-web-lightgray.svg", alt="platform badge")
-    mol-text(:title="config.name.title", :text="config.name.text")
-    mol-text(:title="config.about.title", :text="config.about.text")
-    mol-list(:title="config.skill.title", :items="config.skill.items")
-    mol-list(:title="config.works.title", :items="config.works.items")
-    mol-list(:title="config.hobby.title", :items="config.hobby.items")
-    mol-text(:title="config.likes.title", :text="config.likes.text")
-    mol-list-link(:title="config.contact.title", :items="config.contact.items")
+    mol-text(title="Name", :text="name")
+    mol-text(title="About", :text="about")
+    mol-list(title="Skill", :items="skill")
+    mol-list(title="Works", :items="works")
+    mol-list(title="Hobby", :items="hobby")
+    mol-list(title="Likes", :items="likes")
+    mol-list-link(title="Contact", :items="contact")
 </template>
 
 <script>
-import config from '~/components/config'
-
 import MolText from '~/components/molecules/MolText.vue'
 import MolList from '~/components/molecules/MolList.vue'
 import MolListLink from '~/components/molecules/MolListLink.vue'
@@ -29,7 +27,13 @@ export default {
     MolListLink
   },
   created() {
-    this.config = config
+    this.name = this.$t('name')
+    this.about = this.$t("about")
+    this.skill = this.$t('skill')
+    this.works = this.$t('works')
+    this.hobby = this.$t('hobby')
+    this.likes = this.$t('likes')
+    this.contact = this.$t('contact')
   }
 }
 </script>

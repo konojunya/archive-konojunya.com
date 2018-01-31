@@ -17,7 +17,10 @@
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/pwa": "^2.0.5",
-    "nuxt": "^1.0.0"
+    "change-case": "^3.0.1",
+    "lodash": "^4.17.4",
+    "nuxt": "^1.0.0",
+    "vue-i18n": "^7.4.1"
   },
   "devDependencies": {
     "ava": "^0.24.0",
