@@ -13,7 +13,7 @@
     "precommit": "npm run lint",
     "test": "ava --verbose --serial",
     "coverage": "nyc report --reporter=text npm test",
-    "coverage-report": "nyc report --reporter=text-lcov | coveralls"
+    "coverage-report": "nyc report --reporter=text-lcov npm test | coveralls"
   },
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",

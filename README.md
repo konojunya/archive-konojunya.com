@@ -1,6 +1,6 @@
 # my portfolio site
 
-![](https://user-images.githubusercontent.com/12035578/28760320-0b86c7b6-75e1-11e7-890f-c85663717e87.png)
+![](https://raw.githubusercontent.com/konojunya/images/master/konojunya.com.png)
 
 [konojunya.com](https://konojunya.com)
 
