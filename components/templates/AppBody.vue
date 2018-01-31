@@ -3,7 +3,7 @@
     h1 # README
     img(src="https://circleci.com/gh/konojunya/konojunya.com/tree/master.svg?style=shield&circle-token=23da787516c0584c1519768c1c36e804c06bb72e", alt="circleci badge")
     img(src="https://api.codeclimate.com/v1/badges/4fcf92ae80c89808c11b/maintainability", alt="code climate")
-    img(src="https://coveralls.io/repos/github/konojunya/konojunya.com/badge.svg?branch=develop", alt="coverage badge")
+    img(src="https://coveralls.io/repos/github/konojunya/konojunya.com/badge.svg?branch=master", alt="coverage badge")
     img(src="https://img.shields.io/badge/node-9.2.9-brightgreen.svg", alt="node version badge")
     img(src="https://img.shields.io/npm/v/npm.svg", alt="npm version badge")
     img(src="https://img.shields.io/badge/platform-web-lightgray.svg", alt="platform badge")
