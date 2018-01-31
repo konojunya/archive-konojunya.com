@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "test": "ava --verbose",
+    "test": "ava --verbose --serial",
     "cover": "nyc report --reporter=text-lcov npm run test | coveralls"
   },
   "dependencies": {
@@ -30,6 +30,7 @@
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0",
+    "jsdom": "^11.6.2",
     "node-sass": "^4.7.2",
     "nyc": "^11.4.1",
     "pug": "^2.0.0-beta6",
