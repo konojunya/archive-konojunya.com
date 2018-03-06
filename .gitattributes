@@ -1,2 +1,3 @@
 .circleci/* linguist-vendored
 *.js linguist-vendored
+Makefile linguist-vendored
