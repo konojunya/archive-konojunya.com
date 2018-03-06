@@ -13,12 +13,6 @@
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  */
 
-/**
- * vuex v3.0.1
- * (c) 2017 Evan You
- * @license MIT
- */
-
 /*!
  * vue-i18n v7.4.1 
  * (c) 2018 kazuya kawaguchi
@@ -34,7 +28,7 @@
  */
 
 /**
- * vue-meta v1.4.2
+ * vue-meta v1.4.3
  * (c) 2018 Declan de Wet & Atinux
  * @license MIT
  */
