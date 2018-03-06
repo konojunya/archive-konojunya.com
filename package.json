@@ -21,7 +21,7 @@
     "change-case": "^3.0.1",
     "coveralls": "^3.0.0",
     "lodash": "^4.17.4",
-    "nuxt": "^1.0.0",
+    "nuxt": "^1.4.0",
     "vue-i18n": "^7.4.1"
   },
   "devDependencies": {
