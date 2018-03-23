@@ -52,20 +52,13 @@ module.exports = {
    */
   manifest: {
     name: 'konojunya.com/README.md',
+    short_name: "konojunya.com/README.md",
+    display: "standalone",
     title: 'konojunya.com/README.md',
     'og:title': 'konojunya.com/README.md',
     description: '大阪を拠点にフロントエンドエンジニアとして活動しています。HAL大阪IT学部WEB開発学科。基本的にはJSでコソコソ遊んでいます。IoTにも興味があり、主催者としてIoT縛りの勉強会(IoTLT)などをしています。サーバーサイドはNode.jsやGoを書いています。',
     'og:description': '大阪を拠点にフロントエンドエンジニアとして活動しています。HAL大阪IT学部WEB開発学科。基本的にはJSでコソコソ遊んでいます。IoTにも興味があり、主催者としてIoT縛りの勉強会(IoTLT)などをしています。サーバーサイドはNode.jsやGoを書いています。',
     lang: 'ja'
-  },
-  workbox: {
-    runtimeCaching: [
-      {
-        urlPattern: 'https://s3-us-west-2.amazonaws.com/konojunya.com/.*',
-        handler: 'cacheFirst',
-        method: 'GET'
-      }
-    ]
   },
   /*
   ** Build configuration
